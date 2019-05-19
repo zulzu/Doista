@@ -29,9 +29,9 @@ class TodoListViewController: UITableViewController {
         newItem3.title = "Destroy Demogorgon"
         itemArray.append(newItem3)
         
-//        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
-//            itemArray = items
-//        }
+        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
+            itemArray = items
+        }
         
     }
     
@@ -51,13 +51,9 @@ class TodoListViewController: UITableViewController {
         
         cell.textLabel?.text = item.title
         
+        cell.accessoryType = item.done ? .checkmark : .none
         
-        
-        if item.done == true {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
-        }
+      
         
         return cell
         
