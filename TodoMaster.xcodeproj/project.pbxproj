@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90A6A8A22DCCE8800A3CD88 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A6A8922DCCE8800A3CD88 /* CategoryViewController.swift */; };
 		C97ED352226E529200D06978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97ED351226E529200D06978 /* AppDelegate.swift */; };
 		C97ED354226E529200D06978 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97ED353226E529200D06978 /* TodoListViewController.swift */; };
 		C97ED357226E529200D06978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C97ED355226E529200D06978 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C90A6A8922DCCE8800A3CD88 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = TodoMaster/Controllers/CategoryViewController.swift; sourceTree = SOURCE_ROOT; };
 		C97ED34E226E529200D06978 /* TodoMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97ED351226E529200D06978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C97ED353226E529200D06978 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		C907F662228E1A53005E01A3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C90A6A8922DCCE8800A3CD88 /* CategoryViewController.swift */,
 				C97ED353226E529200D06978 /* TodoListViewController.swift */,
 			);
 			path = Controllers;
@@ -90,8 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				C97ED351226E529200D06978 /* AppDelegate.swift */,
-				C907F661228E1A37005E01A3 /* Data Model */,
 				C907F662228E1A53005E01A3 /* Controllers */,
+				C907F661228E1A37005E01A3 /* Data Model */,
 				C907F663228E1A66005E01A3 /* Views */,
 				C907F664228E1A7D005E01A3 /* Supporting Files */,
 				C97ED35D226E529400D06978 /* Info.plist */,
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90A6A8A22DCCE8800A3CD88 /* CategoryViewController.swift in Sources */,
 				C97ED354226E529200D06978 /* TodoListViewController.swift in Sources */,
 				C9F8F67422D621C00020BA34 /* DataModel.xcdatamodeld in Sources */,
 				C97ED352226E529200D06978 /* AppDelegate.swift in Sources */,
