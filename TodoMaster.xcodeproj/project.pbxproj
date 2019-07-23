@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		332ECE9C40EFF1D8ABA6B605 /* Pods_TodoMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD162DF83DE984DB746C4C62 /* Pods_TodoMaster.framework */; };
+		C9001A8322E7293D00F5B586 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9001A8222E7293D00F5B586 /* SwipeTableViewController.swift */; };
 		C90A6A8A22DCCE8800A3CD88 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A6A8922DCCE8800A3CD88 /* CategoryViewController.swift */; };
 		C97ED352226E529200D06978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97ED351226E529200D06978 /* AppDelegate.swift */; };
 		C97ED354226E529200D06978 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97ED353226E529200D06978 /* TodoListViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		1AA81FE8A294C3B1584ABD79 /* Pods-TodoMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoMaster.release.xcconfig"; path = "Target Support Files/Pods-TodoMaster/Pods-TodoMaster.release.xcconfig"; sourceTree = "<group>"; };
 		AD162DF83DE984DB746C4C62 /* Pods_TodoMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9001A8222E7293D00F5B586 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		C90A6A8922DCCE8800A3CD88 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = TodoMaster/Controllers/CategoryViewController.swift; sourceTree = SOURCE_ROOT; };
 		C97ED34E226E529200D06978 /* TodoMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97ED351226E529200D06978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			children = (
 				C90A6A8922DCCE8800A3CD88 /* CategoryViewController.swift */,
 				C97ED353226E529200D06978 /* TodoListViewController.swift */,
+				C9001A8222E7293D00F5B586 /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				C90A6A8A22DCCE8800A3CD88 /* CategoryViewController.swift in Sources */,
 				C97ED354226E529200D06978 /* TodoListViewController.swift in Sources */,
 				C97ED352226E529200D06978 /* AppDelegate.swift in Sources */,
+				C9001A8322E7293D00F5B586 /* SwipeTableViewController.swift in Sources */,
 				C9B7EB4F22DF786A0000096C /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
