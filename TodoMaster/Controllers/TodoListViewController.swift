@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-import ChameleonFramework
+//import ChameleonFramework
 
 class TodoListViewController: SwipeTableViewController {
     
@@ -41,11 +41,15 @@ class TodoListViewController: SwipeTableViewController {
     
     func updateNavBar(withHexCode colourHexCode: String){
         guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")}
-        guard let navBarColour = UIColor(hexString: colourHexCode) else { fatalError()}
+//        guard let navBarColour = UIColor(hexString: colourHexCode) else { fatalError()}
+        let navBarColour = UIColor(red: 0.2, green: 0.8, blue: 0.2, alpha: 0.3)
+
         //                let navBarColour = FlatWhite()
         navBar.barTintColor = navBarColour
-        navBar.tintColor = ContrastColorOf(navBarColour, returnFlat: true)
-        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : ContrastColorOf(navBarColour, returnFlat: true)]
+//        navBar.tintColor = ContrastColorOf(navBarColour, returnFlat: true)
+//        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : ContrastColorOf(navBarColour, returnFlat: true)]
+        navBar.tintColor = UIColor(red: 0.8, green: 0.2, blue: 0.2, alpha: 0.8)
+        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.7)]
         searchBar.barTintColor = navBarColour
     }
     
@@ -65,10 +69,14 @@ class TodoListViewController: SwipeTableViewController {
             
             cell.textLabel?.text = item.title
             
-            if let color = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage:CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
-                cell.backgroundColor = color
-                cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)
-            }
+//            if let color = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage:CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
+
+//                cell.backgroundColor = color
+            cell.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+
+//                cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)
+                cell.textLabel?.textColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.9)
+//            }
             
 //            cell.textLabel?.attributedText =  nil
             
