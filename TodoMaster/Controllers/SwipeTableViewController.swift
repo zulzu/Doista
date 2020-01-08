@@ -16,6 +16,7 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
         super.viewDidLoad()
         
         tableView.rowHeight = 65.0
+        tableView.separatorStyle = .none
         
     }
     
@@ -32,6 +33,12 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
         
+        let editAction = SwipeAction(style: .default, title: "Edit") { (action, indexPath) in
+            print("Edit items")
+            self.updateModel(at: indexPath)
+        }
+        
+        
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             // handle action by updating model with deletion
             print("Delete Cell")
@@ -42,8 +49,9 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
         
         // customize the action appearance
         deleteAction.image = UIImage(named: "delete-icon")
+        editAction.image = UIImage(named: "flag-icon")
         
-        return [deleteAction]
+        return [deleteAction, editAction]
     }
     
     func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
