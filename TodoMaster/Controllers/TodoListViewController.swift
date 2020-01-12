@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-//import ChameleonFramework
 
 class TodoListViewController: SwipeTableViewController {
     
@@ -42,7 +41,9 @@ class TodoListViewController: SwipeTableViewController {
     func updateNavBar(withHexCode colourHexCode: String){
         guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")}
 //        guard let navBarColour = UIColor(hexString: colourHexCode) else { fatalError()}
-        let navBarColour = UIColor(red: 0.2, green: 0.8, blue: 0.2, alpha: 0.3)
+//        let navBarColour = UIColor(red: 0.2, green: 0.8, blue: 0.2, alpha: 0.3)
+        
+        let navBarColour = UIColor(hex: selectedCategory!.color)
 
         //                let navBarColour = FlatWhite()
         navBar.barTintColor = navBarColour
@@ -218,3 +219,4 @@ extension String {
         return attributeString
     }
 }
+
