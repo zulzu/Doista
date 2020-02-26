@@ -33,25 +33,21 @@ class TodoListViewController: SwipeTableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        updateNavBar(withHexCode: "1D9BF6")
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#36648B")]
+        navigationController?.navigationBar.barTintColor = UIColor(hex: "#36648B")
     }
     
     //MARK: - Nav Bar Setup Methods
     
     func updateNavBar(withHexCode colourHexCode: String){
         guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")}
-//        guard let navBarColour = UIColor(hexString: colourHexCode) else { fatalError()}
-//        let navBarColour = UIColor(red: 0.2, green: 0.8, blue: 0.2, alpha: 0.3)
-        
+         
         let navBarColour = UIColor(hex: selectedCategory!.color)
-
-        //                let navBarColour = FlatWhite()
         navBar.barTintColor = navBarColour
-//        navBar.tintColor = ContrastColorOf(navBarColour, returnFlat: true)
-//        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : ContrastColorOf(navBarColour, returnFlat: true)]
-        navBar.tintColor = UIColor(red: 0.8, green: 0.2, blue: 0.2, alpha: 0.8)
-        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.7)]
-        searchBar.barTintColor = navBarColour
+        navBar.tintColor = navBarColour?.withAlphaComponent(0.5)
+        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : navBarColour?.withAlphaComponent(0.5)]
+//        searchBar.barTintColor = navBarColour?.withAlphaComponent(0.5)
+//        searchBar.barTintColor = navBarColour
     }
     
     
@@ -72,18 +68,14 @@ class TodoListViewController: SwipeTableViewController {
             
 //            if let color = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage:CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
 
-//                cell.backgroundColor = color
-            cell.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+            cell.backgroundColor = UIColor(hex: selectedCategory!.color)
 
-//                cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)
                 cell.textLabel?.textColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.9)
 //            }
             
-//            cell.textLabel?.attributedText =  nil
             
-//cell.textLabel?.attributedText = item.title.strikeThrough()
             
-            cell.accessoryType = item.done ? .checkmark : .none
+//            cell.accessoryType = item.done ? .checkmark : .none
             
             if item.done == false {
                 cell.textLabel?.attributedText =  nil
@@ -118,6 +110,7 @@ class TodoListViewController: SwipeTableViewController {
         tableView.reloadData()
         
         tableView.deselectRow(at: indexPath, animated: true)
+        
         
         
     }
@@ -186,29 +179,29 @@ class TodoListViewController: SwipeTableViewController {
     
 }
 
-//MARK: - Search bar methods
-
-extension TodoListViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-                todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "title", ascending: true)
-//        todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
-        
-        tableView.reloadData()
-        
-    }
-    
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text?.count == 0 {
-            loadItems()
-            
-            DispatchQueue.main.async {
-                searchBar.resignFirstResponder()
-            }
-        }
-    }
-}
+////MARK: - Search bar methods
+//
+//extension TodoListViewController: UISearchBarDelegate {
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//
+//                todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "title", ascending: true)
+////        todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
+//
+//        tableView.reloadData()
+//
+//    }
+//
+//
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        if searchBar.text?.count == 0 {
+//            loadItems()
+//
+//            DispatchQueue.main.async {
+//                searchBar.resignFirstResponder()
+//            }
+//        }
+//    }
+//}
 
 //MARK: - Extensions
 

@@ -21,6 +21,7 @@ class CategoryViewController: SwipeTableViewController {
         super.viewDidLoad()
         
         loadCategories()
+                navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#36648B")]
         
     }
     
@@ -38,6 +39,11 @@ class CategoryViewController: SwipeTableViewController {
             cell.textLabel?.text = category.name
             let categoryColour = UIColor(hex: category.color)
             cell.backgroundColor = categoryColour
+            
+            
+            
+            
+            
             cell.textLabel?.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         }
         
@@ -212,10 +218,6 @@ extension UIColor {
     
 }
 
-
-
-
-
 //Creating random UIColor values
 //    usage:
 //    let myColor: UIColor = .random
@@ -235,3 +237,28 @@ extension UIColor {
 //let myColorHex = myColor.toHex()
 //print(myColorHex!)
 //let myColorFromHex = UIColor(hex: myColorHex!)
+
+
+extension UIColor {
+    var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+
+        return (red, green, blue, alpha)
+    }
+}
+
+extension String {
+
+    func slice(from: String, to: String) -> String? {
+
+        return (range(of: from)?.upperBound).flatMap { substringFrom in
+            (range(of: to, range: substringFrom..<endIndex)?.lowerBound).map { substringTo in
+                String(self[substringFrom..<substringTo])
+            }
+        }
+    }
+}
