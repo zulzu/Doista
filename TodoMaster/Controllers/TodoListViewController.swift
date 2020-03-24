@@ -5,7 +5,6 @@
 //  Created by Andras Pal on 22/04/2019.
 //  Copyright © 2019 Andras Pal. All rights reserved.
 //
-
 import UIKit
 import RealmSwift
 
@@ -24,7 +23,107 @@ class TodoListViewController: SwipeTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        var swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.swipedRight))
+//
+//        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+//
+//        var swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.swipedLeft))
+//        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+//
+//        self.view.addGestureRecognizer(swipeLeft)
+//
+//        self.view.addGestureRecognizer(swipeRight)
+        swipeGesture()
+
+        
+        self.tableView.isEditing = false
     }
+    
+    func swipeGesture(){
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+    }
+    
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer)
+    {
+        if (sender.direction == .left)
+        {
+           print("Swipe Left")
+
+        }
+
+        if (sender.direction == .right)
+        {
+           print("Swipe Right")
+
+        }
+    }
+    
+
+//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt IndexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, complete in
+//            let deletedObject = self.todoItems?[IndexPath.row]
+//            try! self.realm?.write {
+//                self.realm?.delete(deletedObject!)
+//            }
+//
+////            self.todoItems.remove(at: indexPath.row)
+////            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+//            complete(true)
+//        }
+//
+//        deleteAction.backgroundColor = .red
+//
+//        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+//        configuration.performsFirstActionWithFullSwipe = true
+//        return configuration
+//    }
+//
+//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+//
+//    override func tableView(_ tableView: UITableView, editActionsForRowAt IndexPath: IndexPath) -> [UITableViewRowAction]? {
+//        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { _, _ in
+////            self.Items.remove(at: indexPath.row)
+////            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+//            let movedObject = self.todoItems?[IndexPath.row]
+//            try! self.realm?.write {
+//                self.realm?.delete(movedObject!)
+//            }
+//        }
+//        deleteAction.backgroundColor = .red
+//        return [deleteAction]
+//    }
+    
+//    
+//    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .none
+//    }
+//
+//    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+//        return false
+//    }
+//    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//        let movedObject = self.todoItems?[sourceIndexPath.row]
+//
+//        try! realm?.write {
+//            realm?.delete(movedObject!)
+//        }
+////
+////
+////   //     todoItems.remove(at: sourceIndexPath.row)
+////   //     todoItems.insert(movedObject, at: destinationIndexPath.row)
+////    }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         title = selectedCategory?.name
@@ -67,7 +166,6 @@ class TodoListViewController: SwipeTableViewController {
             cell.textLabel?.text = item.title
             
 //            if let color = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage:CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
-
             cell.backgroundColor = UIColor(hex: selectedCategory!.color)
 
                 cell.textLabel?.textColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.9)
@@ -91,6 +189,9 @@ class TodoListViewController: SwipeTableViewController {
         return cell
         
     }
+    
+
+    
     
     //MARK: - TableView Delegate Methods
     
@@ -163,19 +264,19 @@ class TodoListViewController: SwipeTableViewController {
         tableView.reloadData()
     }
     
-    //MARK: Delete Data From Swipe
-    
-    override func updateModel(at indexPath: IndexPath) {
-        if let item = todoItems?[indexPath.row] {
-            do {
-                try realm?.write {
-                    realm?.delete(item)
-                }
-            } catch {
-                print("Error deleting item, \(error)")
-            }
-        }
-    }
+//    //MARK: Delete Data From Swipe
+//
+//    override func updateModel(at indexPath: IndexPath) {
+//        if let item = todoItems?[indexPath.row] {
+//            do {
+//                try realm?.write {
+//                    realm?.delete(item)
+//                }
+//            } catch {
+//                print("Error deleting item, \(error)")
+//            }
+//        }
+//    }
     
 }
 
@@ -202,9 +303,7 @@ class TodoListViewController: SwipeTableViewController {
 //        }
 //    }
 //}
-
 //MARK: - Extensions
-
 extension String {
     func strikeThrough() -> NSAttributedString {
         let attributeString =  NSMutableAttributedString(string: self)
@@ -212,4 +311,3 @@ extension String {
         return attributeString
     }
 }
-

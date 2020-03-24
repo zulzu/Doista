@@ -5,10 +5,8 @@
 //  Created by Andras Pal on 15/07/2019.
 //  Copyright © 2019 Andras Pal. All rights reserved.
 //
-
 import UIKit
 import RealmSwift
-//import ChameleonFramework
 
 class CategoryViewController: SwipeTableViewController {
     
@@ -140,7 +138,6 @@ class CategoryViewController: SwipeTableViewController {
 }
 
 //MARK: - Extensions
-
 //Converting UIColor values to hex and back
 //
 //Usage:
@@ -148,7 +145,6 @@ class CategoryViewController: SwipeTableViewController {
 //let greenWithAlpha = UIColor(hex: "12FF10AC")
 //UIColor.blue.toHex
 //UIColor.orange.toHex()
-
 extension UIColor {
     
     // MARK: - Initialization
@@ -221,7 +217,6 @@ extension UIColor {
 //Creating random UIColor values
 //    usage:
 //    let myColor: UIColor = .random
-
 extension UIColor {
     static var random: UIColor {
         return UIColor(red: .random(in: 0...1),
@@ -237,7 +232,6 @@ extension UIColor {
 //let myColorHex = myColor.toHex()
 //print(myColorHex!)
 //let myColorFromHex = UIColor(hex: myColorHex!)
-
 
 extension UIColor {
     var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
