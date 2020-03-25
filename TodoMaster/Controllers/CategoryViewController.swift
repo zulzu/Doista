@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-//import ChameleonFramework
 
 class CategoryViewController: SwipeTableViewController {
     
@@ -125,17 +124,17 @@ class CategoryViewController: SwipeTableViewController {
     
     //MARK: Delete Data From Swipe
     
-    override func updateModel(at indexPath: IndexPath) {
-        if let categoryForDeletion = self.categories?[indexPath.row] {
-            do {
-                try self.realm.write {
-                    self.realm.delete(categoryForDeletion)
-                }
-            } catch {
-                print("Error deleting category, \(error)")
-            }
-        }
-    }
+//    override func updateModel(at indexPath: IndexPath) {
+//        if let categoryForDeletion = self.categories?[indexPath.row] {
+//            do {
+//                try self.realm.write {
+//                    self.realm.delete(categoryForDeletion)
+//                }
+//            } catch {
+//                print("Error deleting category, \(error)")
+//            }
+//        }
+//    }
     
 }
 

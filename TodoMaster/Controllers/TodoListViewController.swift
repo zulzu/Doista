@@ -33,7 +33,7 @@ class TodoListViewController: SwipeTableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#36648B")]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#36648B")!]
         navigationController?.navigationBar.barTintColor = UIColor(hex: "#36648B")
     }
     
@@ -45,9 +45,7 @@ class TodoListViewController: SwipeTableViewController {
         let navBarColour = UIColor(hex: selectedCategory!.color)
         navBar.barTintColor = navBarColour
         navBar.tintColor = navBarColour?.withAlphaComponent(0.5)
-        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : navBarColour?.withAlphaComponent(0.5)]
-//        searchBar.barTintColor = navBarColour?.withAlphaComponent(0.5)
-//        searchBar.barTintColor = navBarColour
+        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : navBarColour?.withAlphaComponent(0.5) as Any]
     }
     
     
@@ -165,43 +163,21 @@ class TodoListViewController: SwipeTableViewController {
     
     //MARK: Delete Data From Swipe
     
-    override func updateModel(at indexPath: IndexPath) {
-        if let item = todoItems?[indexPath.row] {
-            do {
-                try realm?.write {
-                    realm?.delete(item)
-                }
-            } catch {
-                print("Error deleting item, \(error)")
-            }
-        }
-    }
-    
-}
-
-////MARK: - Search bar methods
-//
-//extension TodoListViewController: UISearchBarDelegate {
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//
-//                todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "title", ascending: true)
-////        todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
-//
-//        tableView.reloadData()
-//
-//    }
-//
-//
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if searchBar.text?.count == 0 {
-//            loadItems()
-//
-//            DispatchQueue.main.async {
-//                searchBar.resignFirstResponder()
+//    override func updateModel(at indexPath: IndexPath) {
+//        if let item = todoItems?[indexPath.row] {
+//            do {
+//                try realm?.write {
+//                    realm?.delete(item)
+//                }
+//            } catch {
+//                print("Error deleting item, \(error)")
 //            }
 //        }
 //    }
-//}
+    
+}
+
+
 
 //MARK: - Extensions
 
