@@ -22,22 +22,22 @@ class SwipeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-    
+        
         return cell
     }
     
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath)
         -> [UITableViewRowAction]? {
-        
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete",
-                                          handler: handleRowAction)
-        let edit = UITableViewRowAction(style: .normal, title: "Edit",
-                                        handler: handleRowAction)
-        edit.backgroundColor = UIColor.blue
-        
-        return [edit, delete]
-        
+                        
+            let delete = UITableViewRowAction(style: .destructive, title: "Delete",
+                                              handler: handleRowAction)
+            
+            let edit = UITableViewRowAction(style: .normal, title: "Edit",
+                                            handler: handleRowAction)
+            edit.backgroundColor = UIColor.blue
+            
+            return [delete, edit]
     }
     
     func handleRowAction(action: UITableViewRowAction, indexPath: IndexPath){
@@ -46,33 +46,35 @@ class SwipeTableViewController: UITableViewController {
         let actionItem = action.title
         switch actionItem {
             
-        case "Delete":
-            print("Delete function")
-//            myArray.remove(at: indexPath.row)
-//            myTableView.deleteRows(at: [indexPath as IndexPath], with: .fade)
-            
         case "Edit":
             print("Edit function")
-//            let alert = UIAlertController(title: "Edit Row Entry",
-//                                          message: nil,
-//                                          preferredStyle: .alert)
-//
-//            alert.addTextField { (textField: UITextField) in
-//                textField.keyboardAppearance = .dark
-//                textField.keyboardType = .default
-//                textField.autocorrectionType = .default
-//                textField.placeholder = self.myArray[indexPath.row]
-//            }
-//
-//            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
-//                self.myArray[indexPath.row] = alert.textFields![0].text!
-//                self.myTableView.reloadRows(at: [indexPath], with: .top)
-//            }))
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
-//                print("Edit Cancelled...")}))
-//
-//            self.present(alert, animated: true)
-
+            //            let alert = UIAlertController(title: "Edit Row Entry",
+            //                                          message: nil,
+            //                                          preferredStyle: .alert)
+            //
+            //            alert.addTextField { (textField: UITextField) in
+            //                textField.keyboardAppearance = .dark
+            //                textField.keyboardType = .default
+            //                textField.autocorrectionType = .default
+            //                textField.placeholder = self.myArray[indexPath.row]
+            //            }
+            //
+            //            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
+            //                self.myArray[indexPath.row] = alert.textFields![0].text!
+            //                self.myTableView.reloadRows(at: [indexPath], with: .top)
+            //            }))
+            //            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+            //                print("Edit Cancelled...")}))
+            //
+            //            self.present(alert, animated: true)
+            
+  case "Delete":
+      print("Delete function")
+      //            myArray.remove(at: indexPath.row)
+      //            myTableView.deleteRows(at: [indexPath as IndexPath], with: .fade)
+     
+      self.updateModel(at: indexPath)
+            
             
         default:
             print("Default just in case")
@@ -81,12 +83,14 @@ class SwipeTableViewController: UITableViewController {
     }
     
     
-    
-    
-    
     func updateModel(at indexPath: IndexPath) {
         // Update our data model
     }
+    
+    
+//    func updateModel(at indexPath: IndexPath) {
+//        // Update our data model
+//    }
     
 }
 

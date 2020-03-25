@@ -163,17 +163,18 @@ class TodoListViewController: SwipeTableViewController {
     
     //MARK: Delete Data From Swipe
     
-//    override func updateModel(at indexPath: IndexPath) {
-//        if let item = todoItems?[indexPath.row] {
-//            do {
-//                try realm?.write {
-//                    realm?.delete(item)
-//                }
-//            } catch {
-//                print("Error deleting item, \(error)")
-//            }
-//        }
-//    }
+    override func updateModel(at indexPath: IndexPath) {
+        if let item = todoItems?[indexPath.row] {
+            do {
+                try realm?.write {
+                    realm?.delete(item)
+                }
+            } catch {
+                print("Error deleting item, \(error)")
+            }
+        }
+         tableView.reloadData()
+    }
     
 }
 
