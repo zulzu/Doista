@@ -127,6 +127,7 @@ class TodoListViewController: SwipeTableViewController {
                 do {
                     try self.realm?.write {
                         let newItem = Item()
+                        newItem.order = Item.incrementalID()
                         newItem.title = textField.text!
                         newItem.dateCreated = Date()
                         currentCategory.items.append(newItem)
@@ -156,7 +157,7 @@ class TodoListViewController: SwipeTableViewController {
     
     func loadItems() {
         
-        todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+        todoItems = selectedCategory?.items.sorted(byKeyPath: "dateCreated", ascending: true)
         
         tableView.reloadData()
     }
@@ -175,6 +176,45 @@ class TodoListViewController: SwipeTableViewController {
         }
          tableView.reloadData()
     }
+    
+    //MARK: Edit Data From Swipe
+
+        override func editModel(at indexPath: IndexPath) {
+            var textField = UITextField()
+            
+            var updatedItem = self.todoItems?[indexPath.row]
+
+            let alert = UIAlertController(title: "Edit Item", message: "", preferredStyle: .alert)
+
+            let action = UIAlertAction(title: "Edit Item", style: .default) { (action) in
+
+                if self.selectedCategory?.items != nil {
+                    do {
+                        try self.realm?.write {
+                            updatedItem?.title = textField.text!
+                            self.realm?.add(updatedItem!, update: .all)
+                        }
+                    } catch {
+                        print("Error savig new items, \(error)")
+                    }
+                }
+
+                self.tableView.reloadData()
+            }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = self.todoItems?[indexPath.row].title
+            textField = alertTextField
+            
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+
     
 }
 

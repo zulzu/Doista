@@ -48,25 +48,9 @@ class SwipeTableViewController: UITableViewController {
             
         case "Edit":
             print("Edit function")
-            //            let alert = UIAlertController(title: "Edit Row Entry",
-            //                                          message: nil,
-            //                                          preferredStyle: .alert)
-            //
-            //            alert.addTextField { (textField: UITextField) in
-            //                textField.keyboardAppearance = .dark
-            //                textField.keyboardType = .default
-            //                textField.autocorrectionType = .default
-            //                textField.placeholder = self.myArray[indexPath.row]
-            //            }
-            //
-            //            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
-            //                self.myArray[indexPath.row] = alert.textFields![0].text!
-            //                self.myTableView.reloadRows(at: [indexPath], with: .top)
-            //            }))
-            //            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
-            //                print("Edit Cancelled...")}))
-            //
-            //            self.present(alert, animated: true)
+            
+            self.editModel(at: indexPath)
+
             
   case "Delete":
       print("Delete function")
@@ -85,6 +69,10 @@ class SwipeTableViewController: UITableViewController {
     
     func updateModel(at indexPath: IndexPath) {
         // Update our data model
+    }
+    
+    func editModel(at indexPath: IndexPath) {
+        //Update our data model
     }
     
     
