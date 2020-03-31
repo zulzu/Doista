@@ -43,7 +43,7 @@ class CategoryViewController: SwipeTableViewController {
             
             
             
-            cell.textLabel?.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            cell.textLabel?.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         }
         
         return cell
@@ -79,6 +79,7 @@ class CategoryViewController: SwipeTableViewController {
             let newCategory = Category()
             newCategory.name = textField.text!
             newCategory.color = UIColor.random.toHex()!
+            newCategory.order = Category.incrementalIDCat()
             
             self.save(category: newCategory)
             
@@ -122,6 +123,8 @@ class CategoryViewController: SwipeTableViewController {
         
     }
  
+    //MARK: Delete Data From Swipe
+    
     override func updateModel(at indexPath: IndexPath) {
         if let categoryForDeletion = self.categories?[indexPath.row] {
             do {
@@ -134,6 +137,46 @@ class CategoryViewController: SwipeTableViewController {
         }
          tableView.reloadData()
     }
+    
+    
+    //MARK: Edit Data From Swipe
+
+        override func editModel(at indexPath: IndexPath) {
+            var textField = UITextField()
+            
+            var updatedCategory = self.categories?[indexPath.row]
+
+            let alert = UIAlertController(title: "Edit Category", message: "", preferredStyle: .alert)
+
+            let action = UIAlertAction(title: "Edit Category", style: .default) { (action) in
+
+                if self.categories?[indexPath.row] != nil {
+                    do {
+                        try self.realm.write {
+                            updatedCategory?.name = textField.text!
+                            self.realm.add(updatedCategory!, update: .all)
+                        }
+                    } catch {
+                        print("Error savig new items, \(error)")
+                    }
+                }
+
+                self.tableView.reloadData()
+            }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = self.categories?[indexPath.row].name
+            textField = alertTextField
+            
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    
     
     
 }

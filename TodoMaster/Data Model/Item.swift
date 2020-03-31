@@ -20,7 +20,7 @@ class Item: Object {
         return "order"
     }
     
-    static func incrementalID() -> Int {
+    static func incrementalIDItem() -> Int {
         let realm = try! Realm()
         return (realm.objects(Item.self).max(ofProperty: "order") as Int? ?? 0) + 1
     }

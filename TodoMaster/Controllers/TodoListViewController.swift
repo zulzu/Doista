@@ -127,7 +127,7 @@ class TodoListViewController: SwipeTableViewController {
                 do {
                     try self.realm?.write {
                         let newItem = Item()
-                        newItem.order = Item.incrementalID()
+                        newItem.order = Item.incrementalIDItem()
                         newItem.title = textField.text!
                         newItem.dateCreated = Date()
                         currentCategory.items.append(newItem)
