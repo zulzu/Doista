@@ -20,7 +20,7 @@ class CategoryViewController: SwipeTableViewController {
         super.viewDidLoad()
         
         loadCategories()
-                navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#36648B")]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#36648B")!]
         
     }
     
@@ -38,11 +38,6 @@ class CategoryViewController: SwipeTableViewController {
             cell.textLabel?.text = category.name
             let categoryColour = UIColor(hex: category.color)
             cell.backgroundColor = categoryColour
-            
-            
-            
-            
-            
             cell.textLabel?.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         }
         
@@ -86,11 +81,13 @@ class CategoryViewController: SwipeTableViewController {
         }
         
         alert.addAction(action)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addTextField { (field) in
             textField = field
             textField.placeholder = "Add a new category"
         }
         
+        alert.preferredAction = action
         present(alert, animated: true, completion: nil)
         
     }
@@ -129,6 +126,7 @@ class CategoryViewController: SwipeTableViewController {
         if let categoryForDeletion = self.categories?[indexPath.row] {
             do {
                 try self.realm.write {
+                    self.realm.delete(categoryForDeletion.items)
                     self.realm.delete(categoryForDeletion)
                 }
             } catch {
@@ -144,11 +142,11 @@ class CategoryViewController: SwipeTableViewController {
         override func editModel(at indexPath: IndexPath) {
             var textField = UITextField()
             
-            var updatedCategory = self.categories?[indexPath.row]
+            let updatedCategory = self.categories?[indexPath.row]
 
             let alert = UIAlertController(title: "Edit Category", message: "", preferredStyle: .alert)
 
-            let action = UIAlertAction(title: "Edit Category", style: .default) { (action) in
+            let action = UIAlertAction(title: "Update", style: .default) { (action) in
 
                 if self.categories?[indexPath.row] != nil {
                     do {
@@ -171,6 +169,8 @@ class CategoryViewController: SwipeTableViewController {
         }
         
         alert.addAction(action)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.preferredAction = action
         present(alert, animated: true, completion: nil)
         
         

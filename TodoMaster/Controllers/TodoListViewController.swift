@@ -119,7 +119,7 @@ class TodoListViewController: SwipeTableViewController {
         
         var textField = UITextField()
         
-        let alert = UIAlertController(title: "Add new TodoMaster Item", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add new Item", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             
@@ -146,6 +146,8 @@ class TodoListViewController: SwipeTableViewController {
         }
         
         alert.addAction(action)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.preferredAction = action
         present(alert, animated: true, completion: nil)
         
         
@@ -182,11 +184,11 @@ class TodoListViewController: SwipeTableViewController {
         override func editModel(at indexPath: IndexPath) {
             var textField = UITextField()
             
-            var updatedItem = self.todoItems?[indexPath.row]
+            let updatedItem = self.todoItems?[indexPath.row]
 
             let alert = UIAlertController(title: "Edit Item", message: "", preferredStyle: .alert)
 
-            let action = UIAlertAction(title: "Edit Item", style: .default) { (action) in
+            let action = UIAlertAction(title: "Update", style: .default) { (action) in
 
                 if self.selectedCategory?.items != nil {
                     do {
@@ -209,6 +211,8 @@ class TodoListViewController: SwipeTableViewController {
         }
         
         alert.addAction(action)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.preferredAction = action
         present(alert, animated: true, completion: nil)
         
         

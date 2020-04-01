@@ -54,9 +54,6 @@ class SwipeTableViewController: UITableViewController {
             
   case "Delete":
       print("Delete function")
-      //            myArray.remove(at: indexPath.row)
-      //            myTableView.deleteRows(at: [indexPath as IndexPath], with: .fade)
-     
       self.updateModel(at: indexPath)
             
             
@@ -75,10 +72,6 @@ class SwipeTableViewController: UITableViewController {
         //Update our data model
     }
     
-    
-//    func updateModel(at indexPath: IndexPath) {
-//        // Update our data model
-//    }
     
 }
 
