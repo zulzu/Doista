@@ -1,6 +1,6 @@
 //
 //  CategoryViewController.swift
-//  TodoMaster
+//  Doodoo
 //
 //  Created by Andras Pal on 15/07/2019.
 //  Copyright © 2019 Andras Pal. All rights reserved.
@@ -17,10 +17,12 @@ class CategoryViewController: SwipeTableViewController {
     var categories: Results<Category>?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         loadCategories()
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#36648B")!]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121")!]
+
         
     }
     
@@ -58,6 +60,10 @@ class CategoryViewController: SwipeTableViewController {
         
         if let indexPath = tableView.indexPathForSelectedRow {
             destinationVC.selectedCategory = categories?[indexPath.row]
+            
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
         }
     }
     
@@ -67,7 +73,7 @@ class CategoryViewController: SwipeTableViewController {
         
         var textField = UITextField()
         
-        let alert = UIAlertController(title: "Add new Category", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add a new category", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             
@@ -84,7 +90,7 @@ class CategoryViewController: SwipeTableViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addTextField { (field) in
             textField = field
-            textField.placeholder = "Add a new category"
+            textField.placeholder = "Category name"
         }
         
         alert.preferredAction = action
@@ -144,7 +150,7 @@ class CategoryViewController: SwipeTableViewController {
             
             let updatedCategory = self.categories?[indexPath.row]
 
-            let alert = UIAlertController(title: "Edit Category", message: "", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Edit category", message: "", preferredStyle: .alert)
 
             let action = UIAlertAction(title: "Update", style: .default) { (action) in
 
@@ -162,11 +168,16 @@ class CategoryViewController: SwipeTableViewController {
                 self.tableView.reloadData()
             }
         
-        alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = self.categories?[indexPath.row].name
-            textField = alertTextField
+//        alert.addTextField { (alertTextField) in
+//            alertTextField.placeholder = self.categories?[indexPath.row].name
+//            textField = alertTextField
+//        }
             
-        }
+            alert.addTextField { (alertTextField) in
+                alertTextField.placeholder = "New name"
+                textField = alertTextField
+            }
+            
         
         alert.addAction(action)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

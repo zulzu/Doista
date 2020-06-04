@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  TodoMaster
+//  Doodoo
 //
 //  Created by Andras Pal on 22/04/2019.
 //  Copyright © 2019 Andras Pal. All rights reserved.
@@ -23,7 +23,9 @@ class TodoListViewController: SwipeTableViewController {
     }
     
     override func viewDidLoad() {
+                        
         super.viewDidLoad()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,8 +35,8 @@ class TodoListViewController: SwipeTableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#36648B")!]
-        navigationController?.navigationBar.barTintColor = UIColor(hex: "#36648B")
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121")!]
+        navigationController?.navigationBar.barTintColor = UIColor(hex: "#ffffff")
     }
     
     //MARK: - Nav Bar Setup Methods
@@ -44,8 +46,9 @@ class TodoListViewController: SwipeTableViewController {
          
         let navBarColour = UIColor(hex: selectedCategory!.color)
         navBar.barTintColor = navBarColour
-        navBar.tintColor = navBarColour?.withAlphaComponent(0.5)
-        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : navBarColour?.withAlphaComponent(0.5) as Any]
+        navBar.tintColor = navBarColour?.withAlphaComponent(0.7)
+        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : navBarColour?.withAlphaComponent(0.7) as Any]
+        
     }
     
     
@@ -66,8 +69,13 @@ class TodoListViewController: SwipeTableViewController {
             
 //            if let color = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage:CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
 
+//            let itemNumber : Int = Int(todoItems?[indexPath.row] ?? 1)
+//            let itemAlpha = Int(1 - ((item * 3)/100))
+            
             cell.backgroundColor = UIColor(hex: selectedCategory!.color)
 
+            
+            
                 cell.textLabel?.textColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.9)
 //            }
             
@@ -82,11 +90,16 @@ class TodoListViewController: SwipeTableViewController {
                 cell.textLabel?.attributedText = item.title.strikeThrough()
             }
             
+//                    print("\(item)")
+//            print("\(todoItems?[indexPath.row])")
+//            print("\(todoItems?.count)")
+            
         } else {
             cell.textLabel?.text = "No items added"
         }
         
         return cell
+
         
     }
     
@@ -119,9 +132,9 @@ class TodoListViewController: SwipeTableViewController {
         
         var textField = UITextField()
         
-        let alert = UIAlertController(title: "Add new Item", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add a new item", message: "", preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+        let action = UIAlertAction(title: "Add", style: .default) { (action) in
             
             if let currentCategory = self.selectedCategory {
                 do {
@@ -140,7 +153,7 @@ class TodoListViewController: SwipeTableViewController {
         }
         
         alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "Create new item"
+            alertTextField.placeholder = "Item name"
             textField = alertTextField
             
         }
@@ -186,7 +199,7 @@ class TodoListViewController: SwipeTableViewController {
             
             let updatedItem = self.todoItems?[indexPath.row]
 
-            let alert = UIAlertController(title: "Edit Item", message: "", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Edit item", message: "", preferredStyle: .alert)
 
             let action = UIAlertAction(title: "Update", style: .default) { (action) in
 
@@ -204,11 +217,15 @@ class TodoListViewController: SwipeTableViewController {
                 self.tableView.reloadData()
             }
         
-        alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = self.todoItems?[indexPath.row].title
-            textField = alertTextField
+//        alert.addTextField { (alertTextField) in
+//            alertTextField.placeholder = self.todoItems?[indexPath.row].title
+//            textField = alertTextField
+//        }
             
-        }
+            alert.addTextField { (alertTextField) in
+                alertTextField.placeholder = "New name"
+                textField = alertTextField
+            }
         
         alert.addAction(action)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

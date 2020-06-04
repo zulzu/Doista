@@ -1,6 +1,6 @@
 //
 //  Item.swift
-//  TodoMaster
+//  Doodoo
 //
 //  Created by Andras Pal on 17/07/2019.
 //  Copyright © 2019 Andras Pal. All rights reserved.

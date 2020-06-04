@@ -1,6 +1,6 @@
 //
 //  SwipeTableViewController.swift
-//  TodoMaster
+//  Doodoo
 //
 //  Created by Andras Pal on 23/07/2019.
 //  Copyright © 2019 Andras Pal. All rights reserved.
@@ -15,6 +15,9 @@ class SwipeTableViewController: UITableViewController {
         
         tableView.rowHeight = 65.0
         tableView.separatorStyle = .none
+        
+//        self.tableView.isScrollEnabled = tableView.contentSize.height < tableView.frame.height
+        
         
     }
     
