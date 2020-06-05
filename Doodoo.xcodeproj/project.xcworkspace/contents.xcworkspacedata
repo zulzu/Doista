@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TodoMaster.xcodeproj">
+      location = "self:/Users/andraspal/Documents/swift/TodoMaster/TodoMaster/Doodoo.xcodeproj">
    </FileRef>
 </Workspace>

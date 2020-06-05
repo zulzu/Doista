@@ -10,7 +10,7 @@
         <!--My doodoos-->
         <scene sceneID="dJO-zu-HQC">
             <objects>
-                <tableViewController id="6Fu-va-lLK" customClass="CategoryViewController" customModule="TodoMaster" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="6Fu-va-lLK" customClass="CategoryViewController" customModule="Doodoo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pBm-fn-xfN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,7 +58,7 @@
         <!--Items-->
         <scene sceneID="5dY-Cb-gvm">
             <objects>
-                <tableViewController id="HNy-lU-rsQ" customClass="TodoListViewController" customModule="TodoMaster" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="HNy-lU-rsQ" customClass="TodoListViewController" customModule="Doodoo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AG7-vb-jyB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,6 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YyI-i8-oRJ">
-                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="HNy-lU-rsQ" id="whx-Oz-3oO"/>
                             </connections>

@@ -168,11 +168,7 @@ class CategoryViewController: SwipeTableViewController {
                 self.tableView.reloadData()
             }
         
-//        alert.addTextField { (alertTextField) in
-//            alertTextField.placeholder = self.categories?[indexPath.row].name
-//            textField = alertTextField
-//        }
-            
+        
             alert.addTextField { (alertTextField) in
                 alertTextField.placeholder = "New name"
                 textField = alertTextField
@@ -186,8 +182,6 @@ class CategoryViewController: SwipeTableViewController {
         
         
     }
-    
-    
     
     
 }

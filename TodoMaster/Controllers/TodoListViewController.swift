@@ -73,12 +73,9 @@ class TodoListViewController: SwipeTableViewController {
 //            let itemAlpha = Int(1 - ((item * 3)/100))
             
             cell.backgroundColor = UIColor(hex: selectedCategory!.color)
-
-            
             
                 cell.textLabel?.textColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.9)
 //            }
-            
             
             
 //            cell.accessoryType = item.done ? .checkmark : .none
@@ -89,10 +86,6 @@ class TodoListViewController: SwipeTableViewController {
             } else {
                 cell.textLabel?.attributedText = item.title.strikeThrough()
             }
-            
-//                    print("\(item)")
-//            print("\(todoItems?[indexPath.row])")
-//            print("\(todoItems?.count)")
             
         } else {
             cell.textLabel?.text = "No items added"
@@ -111,7 +104,6 @@ class TodoListViewController: SwipeTableViewController {
             do {
                 try realm?.write {
                     item.done = !item.done
-                    //                    realm?.delete(item)
                 }
             } catch {
                 print("Error saving done status, \(error)")
@@ -217,11 +209,6 @@ class TodoListViewController: SwipeTableViewController {
                 self.tableView.reloadData()
             }
         
-//        alert.addTextField { (alertTextField) in
-//            alertTextField.placeholder = self.todoItems?[indexPath.row].title
-//            textField = alertTextField
-//        }
-            
             alert.addTextField { (alertTextField) in
                 alertTextField.placeholder = "New name"
                 textField = alertTextField

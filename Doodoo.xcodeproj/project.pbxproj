@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		332ECE9C40EFF1D8ABA6B605 /* Pods_TodoMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD162DF83DE984DB746C4C62 /* Pods_TodoMaster.framework */; };
+		2D4E38097C20CC2CD85D4C3E /* Pods_Doodoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FAE21F585FC660E82DC4EB8 /* Pods_Doodoo.framework */; };
 		C9001A8322E7293D00F5B586 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9001A8222E7293D00F5B586 /* SwipeTableViewController.swift */; };
 		C90A6A8A22DCCE8800A3CD88 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A6A8922DCCE8800A3CD88 /* CategoryViewController.swift */; };
 		C97ED352226E529200D06978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97ED351226E529200D06978 /* AppDelegate.swift */; };
@@ -20,11 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FAE21F585FC660E82DC4EB8 /* Pods_Doodoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA81FE8A294C3B1584ABD79 /* Pods-TodoMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoMaster.release.xcconfig"; path = "Target Support Files/Pods-TodoMaster/Pods-TodoMaster.release.xcconfig"; sourceTree = "<group>"; };
-		AD162DF83DE984DB746C4C62 /* Pods_TodoMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C5360BC09475F380305BD4B /* Pods-Doodoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodoo.debug.xcconfig"; path = "Target Support Files/Pods-Doodoo/Pods-Doodoo.debug.xcconfig"; sourceTree = "<group>"; };
 		C9001A8222E7293D00F5B586 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		C90A6A8922DCCE8800A3CD88 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = TodoMaster/Controllers/CategoryViewController.swift; sourceTree = SOURCE_ROOT; };
-		C97ED34E226E529200D06978 /* TodoMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97ED34E226E529200D06978 /* Doodoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doodoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97ED351226E529200D06978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C97ED353226E529200D06978 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		C97ED356226E529200D06978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -34,6 +35,7 @@
 		C9B7EB4C22DF785B0000096C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C9B7EB4E22DF786A0000096C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F96E0069F789422D4A2ECB43 /* Pods-TodoMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoMaster.debug.xcconfig"; path = "Target Support Files/Pods-TodoMaster/Pods-TodoMaster.debug.xcconfig"; sourceTree = "<group>"; };
+		FB916EB108231D4BC0DF1E3C /* Pods-Doodoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodoo.release.xcconfig"; path = "Target Support Files/Pods-Doodoo/Pods-Doodoo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				332ECE9C40EFF1D8ABA6B605 /* Pods_TodoMaster.framework in Frameworks */,
+				2D4E38097C20CC2CD85D4C3E /* Pods_Doodoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +55,8 @@
 			children = (
 				F96E0069F789422D4A2ECB43 /* Pods-TodoMaster.debug.xcconfig */,
 				1AA81FE8A294C3B1584ABD79 /* Pods-TodoMaster.release.xcconfig */,
+				6C5360BC09475F380305BD4B /* Pods-Doodoo.debug.xcconfig */,
+				FB916EB108231D4BC0DF1E3C /* Pods-Doodoo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -106,7 +110,7 @@
 		C97ED34F226E529200D06978 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C97ED34E226E529200D06978 /* TodoMaster.app */,
+				C97ED34E226E529200D06978 /* Doodoo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,7 +131,7 @@
 		EEDA34F0C7D74C7F509D3EDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AD162DF83DE984DB746C4C62 /* Pods_TodoMaster.framework */,
+				0FAE21F585FC660E82DC4EB8 /* Pods_Doodoo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,9 +139,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C97ED34D226E529200D06978 /* TodoMaster */ = {
+		C97ED34D226E529200D06978 /* Doodoo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C97ED360226E529400D06978 /* Build configuration list for PBXNativeTarget "TodoMaster" */;
+			buildConfigurationList = C97ED360226E529400D06978 /* Build configuration list for PBXNativeTarget "Doodoo" */;
 			buildPhases = (
 				84B71ADA277539D04DB27513 /* [CP] Check Pods Manifest.lock */,
 				C97ED34A226E529200D06978 /* Sources */,
@@ -149,9 +153,9 @@
 			);
 			dependencies = (
 			);
-			name = TodoMaster;
+			name = Doodoo;
 			productName = TodoMaster;
-			productReference = C97ED34E226E529200D06978 /* TodoMaster.app */;
+			productReference = C97ED34E226E529200D06978 /* Doodoo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -169,7 +173,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C97ED349226E529200D06978 /* Build configuration list for PBXProject "TodoMaster" */;
+			buildConfigurationList = C97ED349226E529200D06978 /* Build configuration list for PBXProject "Doodoo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -182,7 +186,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C97ED34D226E529200D06978 /* TodoMaster */,
+				C97ED34D226E529200D06978 /* Doodoo */,
 			);
 		};
 /* End PBXProject section */
@@ -207,15 +211,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TodoMaster/Pods-TodoMaster-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doodoo/Pods-Doodoo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TodoMaster/Pods-TodoMaster-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doodoo/Pods-Doodoo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodoMaster/Pods-TodoMaster-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doodoo/Pods-Doodoo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		84B71ADA277539D04DB27513 /* [CP] Check Pods Manifest.lock */ = {
@@ -233,7 +237,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TodoMaster-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Doodoo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -396,7 +400,7 @@
 		};
 		C97ED361226E529400D06978 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F96E0069F789422D4A2ECB43 /* Pods-TodoMaster.debug.xcconfig */;
+			baseConfigurationReference = 6C5360BC09475F380305BD4B /* Pods-Doodoo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -415,7 +419,7 @@
 		};
 		C97ED362226E529400D06978 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AA81FE8A294C3B1584ABD79 /* Pods-TodoMaster.release.xcconfig */;
+			baseConfigurationReference = FB916EB108231D4BC0DF1E3C /* Pods-Doodoo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -435,7 +439,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C97ED349226E529200D06978 /* Build configuration list for PBXProject "TodoMaster" */ = {
+		C97ED349226E529200D06978 /* Build configuration list for PBXProject "Doodoo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C97ED35E226E529400D06978 /* Debug */,
@@ -444,7 +448,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C97ED360226E529400D06978 /* Build configuration list for PBXNativeTarget "TodoMaster" */ = {
+		C97ED360226E529400D06978 /* Build configuration list for PBXNativeTarget "Doodoo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C97ED361226E529400D06978 /* Debug */,

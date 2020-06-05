@@ -50,16 +50,13 @@ class SwipeTableViewController: UITableViewController {
         switch actionItem {
             
         case "Edit":
-            print("Edit function")
-            
             self.editModel(at: indexPath)
 
             
   case "Delete":
-      print("Delete function")
+
       self.updateModel(at: indexPath)
-            
-            
+                        
         default:
             print("Default just in case")
         }
