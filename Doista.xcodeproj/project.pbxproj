@@ -25,7 +25,7 @@
 		6C5360BC09475F380305BD4B /* Pods-Doodoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodoo.debug.xcconfig"; path = "Target Support Files/Pods-Doodoo/Pods-Doodoo.debug.xcconfig"; sourceTree = "<group>"; };
 		C9001A8222E7293D00F5B586 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		C90A6A8922DCCE8800A3CD88 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = TodoMaster/Controllers/CategoryViewController.swift; sourceTree = SOURCE_ROOT; };
-		C97ED34E226E529200D06978 /* Doodoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doodoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97ED34E226E529200D06978 /* Doista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doista.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97ED351226E529200D06978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C97ED353226E529200D06978 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		C97ED356226E529200D06978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		C97ED34F226E529200D06978 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C97ED34E226E529200D06978 /* Doodoo.app */,
+				C97ED34E226E529200D06978 /* Doista.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,9 +139,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C97ED34D226E529200D06978 /* Doodoo */ = {
+		C97ED34D226E529200D06978 /* Doista */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C97ED360226E529400D06978 /* Build configuration list for PBXNativeTarget "Doodoo" */;
+			buildConfigurationList = C97ED360226E529400D06978 /* Build configuration list for PBXNativeTarget "Doista" */;
 			buildPhases = (
 				84B71ADA277539D04DB27513 /* [CP] Check Pods Manifest.lock */,
 				C97ED34A226E529200D06978 /* Sources */,
@@ -153,9 +153,9 @@
 			);
 			dependencies = (
 			);
-			name = Doodoo;
+			name = Doista;
 			productName = TodoMaster;
-			productReference = C97ED34E226E529200D06978 /* Doodoo.app */;
+			productReference = C97ED34E226E529200D06978 /* Doista.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -173,7 +173,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C97ED349226E529200D06978 /* Build configuration list for PBXProject "Doodoo" */;
+			buildConfigurationList = C97ED349226E529200D06978 /* Build configuration list for PBXProject "Doista" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -186,7 +186,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C97ED34D226E529200D06978 /* Doodoo */,
+				C97ED34D226E529200D06978 /* Doista */,
 			);
 		};
 /* End PBXProject section */
@@ -439,7 +439,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C97ED349226E529200D06978 /* Build configuration list for PBXProject "Doodoo" */ = {
+		C97ED349226E529200D06978 /* Build configuration list for PBXProject "Doista" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C97ED35E226E529400D06978 /* Debug */,
@@ -448,7 +448,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C97ED360226E529400D06978 /* Build configuration list for PBXNativeTarget "Doodoo" */ = {
+		C97ED360226E529400D06978 /* Build configuration list for PBXNativeTarget "Doista" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C97ED361226E529400D06978 /* Debug */,

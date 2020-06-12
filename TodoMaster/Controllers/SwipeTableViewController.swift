@@ -1,6 +1,6 @@
 //
 //  SwipeTableViewController.swift
-//  Doodoo
+//  Doista
 //
 //  Created by Andras Pal on 23/07/2019.
 //  Copyright © 2019 Andras Pal. All rights reserved.
@@ -35,16 +35,19 @@ class SwipeTableViewController: UITableViewController {
                         
             let delete = UITableViewRowAction(style: .destructive, title: "Delete",
                                               handler: handleRowAction)
+            delete.backgroundColor = UIColor(red: 241/255, green: 94/255, blue: 14/255, alpha: 1.0)
             
             let edit = UITableViewRowAction(style: .normal, title: "Edit",
                                             handler: handleRowAction)
-            edit.backgroundColor = UIColor.blue
+            edit.backgroundColor = UIColor(red: 120/255, green: 0/255, blue: 255/255, alpha: 1.0)
             
             return [delete, edit]
     }
     
     func handleRowAction(action: UITableViewRowAction, indexPath: IndexPath){
         print("Action is \(action.title!) at Index Path \(indexPath)")
+        print("deleted line \(indexPath.row)")
+
         
         let actionItem = action.title
         switch actionItem {

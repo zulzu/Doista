@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Doodoo
+//  Doista
 //
 //  Created by Andras Pal on 22/04/2019.
 //  Copyright © 2019 Andras Pal. All rights reserved.
@@ -37,6 +37,8 @@ class TodoListViewController: SwipeTableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121")!]
         navigationController?.navigationBar.barTintColor = UIColor(hex: "#ffffff")
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121") as Any]
+
     }
     
     //MARK: - Nav Bar Setup Methods
@@ -45,10 +47,10 @@ class TodoListViewController: SwipeTableViewController {
         guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")}
          
         let navBarColour = UIColor(hex: selectedCategory!.color)
-        navBar.barTintColor = navBarColour
+//        navBar.barTintColor = navBarColour
         navBar.tintColor = navBarColour?.withAlphaComponent(0.7)
         navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : navBarColour?.withAlphaComponent(0.7) as Any]
-        
+        navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : navBarColour as Any]
     }
     
     
@@ -67,14 +69,19 @@ class TodoListViewController: SwipeTableViewController {
             
             cell.textLabel?.text = item.title
             
-//            if let color = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage:CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
+            let itemNumber : CGFloat = CGFloat((indexPath.row + 1))
+            var itemAlpha : CGFloat = (1.0 - ((itemNumber * 3)/100))
+            
+            if itemAlpha < 0.61 {
+                itemAlpha = 0.61
+            }
+            
+            print("\(indexPath.row)")
+            print("\(itemAlpha)")
 
-//            let itemNumber : Int = Int(todoItems?[indexPath.row] ?? 1)
-//            let itemAlpha = Int(1 - ((item * 3)/100))
+            cell.backgroundColor = UIColor(hex: selectedCategory!.color)?.withAlphaComponent(itemAlpha)
             
-            cell.backgroundColor = UIColor(hex: selectedCategory!.color)
-            
-                cell.textLabel?.textColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.9)
+                cell.textLabel?.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)
 //            }
             
             

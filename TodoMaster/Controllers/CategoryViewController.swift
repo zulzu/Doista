@@ -1,6 +1,6 @@
 //
 //  CategoryViewController.swift
-//  Doodoo
+//  Doista
 //
 //  Created by Andras Pal on 15/07/2019.
 //  Copyright © 2019 Andras Pal. All rights reserved.
@@ -23,6 +23,13 @@ class CategoryViewController: SwipeTableViewController {
         loadCategories()
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121")!]
 
+//        print("\(categories?.count)")
+//        var testNumber = categories?.count
+//        if testNumber == 0 {
+//            super.tableView.cellForRow(at: IndexPath)?.detailTextLabel?.text = "test"
+//            cell.textLabel?.text = "test"
+//        }
+
         
     }
     
@@ -40,11 +47,11 @@ class CategoryViewController: SwipeTableViewController {
             cell.textLabel?.text = category.name
             let categoryColour = UIColor(hex: category.color)
             cell.backgroundColor = categoryColour
-            cell.textLabel?.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            cell.textLabel?.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)
         }
         
         return cell
-        
+                
     }
     
     
