@@ -100,7 +100,7 @@
 		C97ED345226E529200D06978 = {
 			isa = PBXGroup;
 			children = (
-				C97ED350226E529200D06978 /* TodoMaster */,
+				C97ED350226E529200D06978 /* Doista */,
 				C97ED34F226E529200D06978 /* Products */,
 				4A65EF4FEBD61CAE08C2F16C /* Pods */,
 				EEDA34F0C7D74C7F509D3EDA /* Frameworks */,
@@ -115,7 +115,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C97ED350226E529200D06978 /* TodoMaster */ = {
+		C97ED350226E529200D06978 /* Doista */ = {
 			isa = PBXGroup;
 			children = (
 				C97ED351226E529200D06978 /* AppDelegate.swift */,
@@ -125,7 +125,7 @@
 				C907F664228E1A7D005E01A3 /* Supporting Files */,
 				C97ED35D226E529400D06978 /* Info.plist */,
 			);
-			path = TodoMaster;
+			path = Doista;
 			sourceTree = "<group>";
 		};
 		EEDA34F0C7D74C7F509D3EDA /* Frameworks */ = {
