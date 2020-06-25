@@ -23,14 +23,6 @@ class CategoryViewController: SwipeTableViewController {
         loadCategories()
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121")!]
 
-//        print("\(categories?.count)")
-//        var testNumber = categories?.count
-//        if testNumber == 0 {
-//            super.tableView.cellForRow(at: IndexPath)?.detailTextLabel?.text = "test"
-//            cell.textLabel?.text = "test"
-//        }
-
-        
     }
     
     //MARK: - TableView Datasource Methods
@@ -53,8 +45,6 @@ class CategoryViewController: SwipeTableViewController {
         return cell
                 
     }
-    
-    
     
     //MARK: - TableVIew Delegate Methods
     
@@ -104,11 +94,6 @@ class CategoryViewController: SwipeTableViewController {
         present(alert, animated: true, completion: nil)
         
     }
-    
-    //MARK - Model Manipulation Methods
-    
-    
-    
     
     //MARK: Data Manipulation Methods
     
