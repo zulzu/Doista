@@ -36,7 +36,7 @@ class TodoListViewController: SwipeTableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121")!]
-        navigationController?.navigationBar.barTintColor = UIColor(hex: "#ffffff")
+        navigationController?.navigationBar.barTintColor = UIColor(named: "#ffffff")
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121") as Any]
 
     }
@@ -235,13 +235,5 @@ class TodoListViewController: SwipeTableViewController {
 
 
 
-//MARK: - Extensions
 
-extension String {
-    func strikeThrough() -> NSAttributedString {
-        let attributeString =  NSMutableAttributedString(string: self)
-        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0,attributeString.length))
-        return attributeString
-    }
-}
 
