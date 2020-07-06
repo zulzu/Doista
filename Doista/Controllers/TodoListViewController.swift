@@ -13,9 +13,7 @@ class TodoListViewController: SwipeTableViewController {
     
     var todoItems: Results<Item>?
     let realm = try? Realm()
-    
-    @IBOutlet weak var searchBar: UISearchBar!
-    
+        
     var selectedCategory : Category? {
         didSet{
             loadItems()
@@ -23,7 +21,7 @@ class TodoListViewController: SwipeTableViewController {
     }
     
     override func viewDidLoad() {
-        
+                        
         super.viewDidLoad()
         
     }
@@ -36,18 +34,17 @@ class TodoListViewController: SwipeTableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121")!]
-        navigationController?.navigationBar.barTintColor = UIColor(named: "#ffffff")
+        navigationController?.navigationBar.barTintColor = UIColor(hex: "#ffffff")
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121") as Any]
-        
+
     }
     
     //MARK: - Nav Bar Setup Methods
     
     func updateNavBar(withHexCode colourHexCode: String){
         guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")}
-        
+         
         let navBarColour = UIColor(hex: selectedCategory!.color)
-        //        navBar.barTintColor = navBarColour
         navBar.tintColor = navBarColour?.withAlphaComponent(0.7)
         navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : navBarColour?.withAlphaComponent(0.7) as Any]
         navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : navBarColour as Any]
@@ -75,10 +72,9 @@ class TodoListViewController: SwipeTableViewController {
             }
             
             cell.backgroundColor = UIColor(hex: selectedCategory!.color)?.withAlphaComponent(itemAlpha)
-            cell.textLabel?.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)
-                        
-            //            cell.accessoryType = item.done ? .checkmark : .none
             
+                cell.textLabel?.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)
+                                    
             if item.done == false {
                 cell.textLabel?.attributedText =  nil
                 cell.textLabel?.text =  item.title
@@ -91,8 +87,7 @@ class TodoListViewController: SwipeTableViewController {
         }
         
         return cell
-        
-        
+
     }
     
     //MARK: - TableView Delegate Methods
@@ -112,8 +107,6 @@ class TodoListViewController: SwipeTableViewController {
         tableView.reloadData()
         
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        
         
     }
     
@@ -177,38 +170,38 @@ class TodoListViewController: SwipeTableViewController {
                 print("Error deleting item, \(error)")
             }
         }
-        tableView.reloadData()
+         tableView.reloadData()
     }
     
     //MARK: Edit Data From Swipe
-    
-    override func editModel(at indexPath: IndexPath) {
-        var textField = UITextField()
-        
-        let updatedItem = self.todoItems?[indexPath.row]
-        
-        let alert = UIAlertController(title: "Edit item", message: "", preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "Update", style: .default) { (action) in
+
+        override func editModel(at indexPath: IndexPath) {
+            var textField = UITextField()
             
-            if self.selectedCategory?.items != nil {
-                do {
-                    try self.realm?.write {
-                        updatedItem?.title = textField.text!
-                        self.realm?.add(updatedItem!, update: .all)
+            let updatedItem = self.todoItems?[indexPath.row]
+
+            let alert = UIAlertController(title: "Edit item", message: "", preferredStyle: .alert)
+
+            let action = UIAlertAction(title: "Update", style: .default) { (action) in
+
+                if self.selectedCategory?.items != nil {
+                    do {
+                        try self.realm?.write {
+                            updatedItem?.title = textField.text!
+                            self.realm?.add(updatedItem!, update: .all)
+                        }
+                    } catch {
+                        print("Error savig new items, \(error)")
                     }
-                } catch {
-                    print("Error savig new items, \(error)")
                 }
+
+                self.tableView.reloadData()
             }
-            
-            self.tableView.reloadData()
-        }
         
-        alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "New name"
-            textField = alertTextField
-        }
+            alert.addTextField { (alertTextField) in
+                alertTextField.placeholder = "New name"
+                textField = alertTextField
+            }
         
         alert.addAction(action)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -217,11 +210,4 @@ class TodoListViewController: SwipeTableViewController {
         
     }
     
-    
-    
 }
-
-
-
-
-

@@ -38,7 +38,9 @@
 /* Begin PBXFileReference section */
 		0FAE21F585FC660E82DC4EB8 /* Pods_Doodoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA81FE8A294C3B1584ABD79 /* Pods-TodoMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoMaster.release.xcconfig"; path = "Target Support Files/Pods-TodoMaster/Pods-TodoMaster.release.xcconfig"; sourceTree = "<group>"; };
+		2526DBD1CADDC1656AB8CB41 /* Pods-Doista.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doista.release.xcconfig"; path = "Target Support Files/Pods-Doista/Pods-Doista.release.xcconfig"; sourceTree = "<group>"; };
 		6C5360BC09475F380305BD4B /* Pods-Doodoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodoo.debug.xcconfig"; path = "Target Support Files/Pods-Doodoo/Pods-Doodoo.debug.xcconfig"; sourceTree = "<group>"; };
+		AE7B03EB6D7DB7C89C3158C8 /* Pods-Doista.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doista.debug.xcconfig"; path = "Target Support Files/Pods-Doista/Pods-Doista.debug.xcconfig"; sourceTree = "<group>"; };
 		C9001A8222E7293D00F5B586 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		C97ED34E226E529200D06978 /* Doista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doista.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97ED351226E529200D06978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,8 @@
 				1AA81FE8A294C3B1584ABD79 /* Pods-TodoMaster.release.xcconfig */,
 				6C5360BC09475F380305BD4B /* Pods-Doodoo.debug.xcconfig */,
 				FB916EB108231D4BC0DF1E3C /* Pods-Doodoo.release.xcconfig */,
+				AE7B03EB6D7DB7C89C3158C8 /* Pods-Doista.debug.xcconfig */,
+				2526DBD1CADDC1656AB8CB41 /* Pods-Doista.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -232,15 +236,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Doodoo/Pods-Doodoo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doista/Pods-Doista-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Doodoo/Pods-Doodoo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doista/Pods-Doista-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doodoo/Pods-Doodoo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doista/Pods-Doista-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		84B71ADA277539D04DB27513 /* [CP] Check Pods Manifest.lock */ = {
@@ -258,7 +262,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Doodoo-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Doista-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -422,7 +426,7 @@
 		};
 		C97ED361226E529400D06978 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C5360BC09475F380305BD4B /* Pods-Doodoo.debug.xcconfig */;
+			baseConfigurationReference = AE7B03EB6D7DB7C89C3158C8 /* Pods-Doista.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,7 +446,7 @@
 		};
 		C97ED362226E529400D06978 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB916EB108231D4BC0DF1E3C /* Pods-Doodoo.release.xcconfig */;
+			baseConfigurationReference = 2526DBD1CADDC1656AB8CB41 /* Pods-Doista.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

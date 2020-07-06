@@ -22,7 +22,6 @@ class CategoryViewController: SwipeTableViewController {
         
         loadCategories()
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121")!]
-
     }
     
     //MARK: - TableView Datasource Methods
@@ -134,7 +133,6 @@ class CategoryViewController: SwipeTableViewController {
          tableView.reloadData()
     }
     
-    
     //MARK: Edit Data From Swipe
 
         override func editModel(at indexPath: IndexPath) {
@@ -166,16 +164,12 @@ class CategoryViewController: SwipeTableViewController {
                 textField = alertTextField
             }
             
-        
         alert.addAction(action)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.preferredAction = action
         present(alert, animated: true, completion: nil)
         
-        
     }
     
     
 }
-
-
