@@ -36,10 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0FAE21F585FC660E82DC4EB8 /* Pods_Doodoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AA81FE8A294C3B1584ABD79 /* Pods-TodoMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoMaster.release.xcconfig"; path = "Target Support Files/Pods-TodoMaster/Pods-TodoMaster.release.xcconfig"; sourceTree = "<group>"; };
 		2526DBD1CADDC1656AB8CB41 /* Pods-Doista.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doista.release.xcconfig"; path = "Target Support Files/Pods-Doista/Pods-Doista.release.xcconfig"; sourceTree = "<group>"; };
-		6C5360BC09475F380305BD4B /* Pods-Doodoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodoo.debug.xcconfig"; path = "Target Support Files/Pods-Doodoo/Pods-Doodoo.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7B03EB6D7DB7C89C3158C8 /* Pods-Doista.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doista.debug.xcconfig"; path = "Target Support Files/Pods-Doista/Pods-Doista.debug.xcconfig"; sourceTree = "<group>"; };
 		C9001A8222E7293D00F5B586 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		C97ED34E226E529200D06978 /* Doista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doista.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,8 +51,6 @@
 		C9BCFA6124A4FF7300DF6606 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9BCFA6324A500E000DF6606 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		C9BCFA6524A5023900DF6606 /* Pods_Doista.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Doista.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F96E0069F789422D4A2ECB43 /* Pods-TodoMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoMaster.debug.xcconfig"; path = "Target Support Files/Pods-TodoMaster/Pods-TodoMaster.debug.xcconfig"; sourceTree = "<group>"; };
-		FB916EB108231D4BC0DF1E3C /* Pods-Doodoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodoo.release.xcconfig"; path = "Target Support Files/Pods-Doodoo/Pods-Doodoo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +68,6 @@
 		4A65EF4FEBD61CAE08C2F16C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F96E0069F789422D4A2ECB43 /* Pods-TodoMaster.debug.xcconfig */,
-				1AA81FE8A294C3B1584ABD79 /* Pods-TodoMaster.release.xcconfig */,
-				6C5360BC09475F380305BD4B /* Pods-Doodoo.debug.xcconfig */,
-				FB916EB108231D4BC0DF1E3C /* Pods-Doodoo.release.xcconfig */,
 				AE7B03EB6D7DB7C89C3158C8 /* Pods-Doista.debug.xcconfig */,
 				2526DBD1CADDC1656AB8CB41 /* Pods-Doista.release.xcconfig */,
 			);
@@ -155,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				C9BCFA6524A5023900DF6606 /* Pods_Doista.framework */,
-				0FAE21F585FC660E82DC4EB8 /* Pods_Doodoo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
