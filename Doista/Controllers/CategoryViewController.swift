@@ -13,7 +13,6 @@ class CategoryViewController: SwipeTableViewController {
     
     lazy var realm = try! Realm ()
     //    let realm = try! Realm()
-    
     var categories: Results<Category>?
     
     override func viewDidLoad() {
@@ -25,7 +24,6 @@ class CategoryViewController: SwipeTableViewController {
     }
     
     //MARK: - TableView Datasource Methods
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories?.count ?? 1
     }
@@ -42,16 +40,15 @@ class CategoryViewController: SwipeTableViewController {
         }
         
         return cell
-                
     }
     
     //MARK: - TableVIew Delegate Methods
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToItems", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let destinationVC = segue.destination as! TodoListViewController
         
         if let indexPath = tableView.indexPathForSelectedRow {
@@ -64,13 +61,10 @@ class CategoryViewController: SwipeTableViewController {
     }
     
     //MARK: - Add New Categories
-    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
-        
         let alert = UIAlertController(title: "Add a new category", message: "", preferredStyle: .alert)
-        
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             
             let newCategory = Category()
@@ -79,7 +73,6 @@ class CategoryViewController: SwipeTableViewController {
             newCategory.order = Category.incrementalIDCat()
             
             self.save(category: newCategory)
-            
         }
         
         alert.addAction(action)
@@ -91,12 +84,11 @@ class CategoryViewController: SwipeTableViewController {
         
         alert.preferredAction = action
         present(alert, animated: true, completion: nil)
-        
     }
     
     //MARK: Data Manipulation Methods
-    
     func save(category : Category) {
+        
         do {
             try realm.write {
                 realm.add(category)
@@ -106,20 +98,17 @@ class CategoryViewController: SwipeTableViewController {
         }
         
         tableView.reloadData()
-        
     }
     
     func loadCategories() {
         
         categories = realm.objects(Category.self)
-        
         tableView.reloadData()
-        
     }
- 
-    //MARK: Delete Data From Swipe
     
+    //MARK: Delete Data From Swipe
     override func updateModel(at indexPath: IndexPath) {
+        
         if let categoryForDeletion = self.categories?[indexPath.row] {
             do {
                 try self.realm.write {
@@ -130,46 +119,39 @@ class CategoryViewController: SwipeTableViewController {
                 print("Error deleting category, \(error)")
             }
         }
-         tableView.reloadData()
+        tableView.reloadData()
     }
     
     //MARK: Edit Data From Swipe
-
-        override func editModel(at indexPath: IndexPath) {
-            var textField = UITextField()
+    override func editModel(at indexPath: IndexPath) {
+        
+        var textField = UITextField()
+        let updatedCategory = self.categories?[indexPath.row]
+        let alert = UIAlertController(title: "Edit category", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Update", style: .default) { (action) in
             
-            let updatedCategory = self.categories?[indexPath.row]
-
-            let alert = UIAlertController(title: "Edit category", message: "", preferredStyle: .alert)
-
-            let action = UIAlertAction(title: "Update", style: .default) { (action) in
-
-                if self.categories?[indexPath.row] != nil {
-                    do {
-                        try self.realm.write {
-                            updatedCategory?.name = textField.text!
-                            self.realm.add(updatedCategory!, update: .all)
-                        }
-                    } catch {
-                        print("Error savig new items, \(error)")
+            if self.categories?[indexPath.row] != nil {
+                do {
+                    try self.realm.write {
+                        updatedCategory?.name = textField.text!
+                        self.realm.add(updatedCategory!, update: .all)
                     }
+                } catch {
+                    print("Error savig new items, \(error)")
                 }
-
-                self.tableView.reloadData()
-            }
-        
-        
-            alert.addTextField { (alertTextField) in
-                alertTextField.placeholder = "New name"
-                textField = alertTextField
             }
             
+            self.tableView.reloadData()
+        }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "New name"
+            textField = alertTextField
+        }
+        
         alert.addAction(action)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.preferredAction = action
         present(alert, animated: true, completion: nil)
-        
     }
-    
-    
 }

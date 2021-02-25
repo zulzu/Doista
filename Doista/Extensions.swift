@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 //MARK: - Extensions
 
 //Converting UIColor values to hex and back
@@ -23,7 +22,6 @@ import UIKit
 extension UIColor {
     
     // MARK: - Initialization
-    
     convenience init?(hex: String){
         
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -55,17 +53,14 @@ extension UIColor {
         }
         
         self.init(red: r, green: g, blue: b, alpha: a)
-        
     }
     
     // MARK: - Computed Properties
-    
     var toHex: String? {
         return toHex()
     }
     
     // MARK: - From UIColor to String
-    
     func toHex(alpha: Bool = false) -> String? {
         guard let components = cgColor.components, components.count >= 3 else {
             return nil
@@ -86,7 +81,6 @@ extension UIColor {
             return String(format: "%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255))
         }
     }
-    
 }
 
 //Creating random UIColor values
@@ -94,6 +88,7 @@ extension UIColor {
 //    let myColor: UIColor = .random
 
 extension UIColor {
+    
     static var random: UIColor {
         return UIColor(red: .random(in: 0...0.5),
                        green: .random(in: 0...0.5),
@@ -109,23 +104,23 @@ extension UIColor {
 //print(myColorHex!)
 //let myColorFromHex = UIColor(hex: myColorHex!)
 
-
 extension UIColor {
+    
     var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-
+        
         return (red, green, blue, alpha)
     }
 }
 
 extension String {
-
+    
     func slice(from: String, to: String) -> String? {
-
+        
         return (range(of: from)?.upperBound).flatMap { substringFrom in
             (range(of: to, range: substringFrom..<endIndex)?.lowerBound).map { substringTo in
                 String(self[substringFrom..<substringTo])
@@ -135,6 +130,7 @@ extension String {
 }
 
 extension String {
+    
     func strikeThrough() -> NSAttributedString {
         let attributeString =  NSMutableAttributedString(string: self)
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0,attributeString.length))

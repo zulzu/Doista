@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Item: Object {
+    
     @objc dynamic var title: String = ""
     @objc dynamic var done: Bool = false
     @objc dynamic var dateCreated: Date?
@@ -24,7 +25,4 @@ class Item: Object {
         let realm = try! Realm()
         return (realm.objects(Item.self).max(ofProperty: "order") as Int? ?? 0) + 1
     }
-    
 }
-
-

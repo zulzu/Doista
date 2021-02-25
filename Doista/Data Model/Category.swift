@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Category: Object{
+    
     @objc dynamic var name: String = ""
     @objc dynamic var color: String = ""
     @objc dynamic var order = 0
@@ -24,6 +25,4 @@ class Category: Object{
         let realm = try! Realm()
         return (realm.objects(Category.self).max(ofProperty: "order") as Int? ?? 0) + 1
     }
-    
-    
 }
