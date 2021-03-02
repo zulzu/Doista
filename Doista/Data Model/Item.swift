@@ -9,20 +9,26 @@
 import Foundation
 import RealmSwift
 
+/// An Item Realm object. Subclass of Category.
 class Item: Object {
     
+    // The title of the todo list item
     @objc dynamic var title: String = ""
-    @objc dynamic var done: Bool = false
+    // The boolen to track the completion of the item
+    @objc dynamic var isCompleted: Bool = false
+    // The date when the item is created
     @objc dynamic var dateCreated: Date?
-    @objc dynamic var order = 0
+    // The ID of the item
+    @objc dynamic var itemID: Int = 0
+    // The parent category of the Item class
     var parentCategory = LinkingObjects(fromType: Category.self, property: "items")
     
     override static func primaryKey() -> String? {
-        return "order"
+        return "itemID"
     }
     
     static func incrementalIDItem() -> Int {
         let realm = try! Realm()
-        return (realm.objects(Item.self).max(ofProperty: "order") as Int? ?? 0) + 1
+        return (realm.objects(Item.self).max(ofProperty: "itemID") as Int? ?? 0) + 1
     }
 }

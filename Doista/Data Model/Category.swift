@@ -9,20 +9,25 @@
 import Foundation
 import RealmSwift
 
-class Category: Object{
+
+/// A Category Realm object. 
+class Category: Object {
     
+    // The name of the category
     @objc dynamic var name: String = ""
+    // The colour of the category
     @objc dynamic var color: String = ""
-    @objc dynamic var order = 0
-    
+    // The ID of the category
+    @objc dynamic var categoryID: Int = 0
+    // The Item subclass
     let items = List<Item>()
     
     override static func primaryKey() -> String? {
-        return "order"
+        return "categoryID"
     }
     
     static func incrementalIDCat() -> Int {
         let realm = try! Realm()
-        return (realm.objects(Category.self).max(ofProperty: "order") as Int? ?? 0) + 1
+        return (realm.objects(Category.self).max(ofProperty: "categoryID") as Int? ?? 0) + 1
     }
 }

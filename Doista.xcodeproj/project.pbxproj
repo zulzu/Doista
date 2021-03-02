@@ -13,12 +13,11 @@
 		C97ED357226E529200D06978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C97ED355226E529200D06978 /* Main.storyboard */; };
 		C97ED359226E529400D06978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C97ED358226E529400D06978 /* Assets.xcassets */; };
 		C97ED35C226E529400D06978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C97ED35A226E529400D06978 /* LaunchScreen.storyboard */; };
+		C992DA9B25EE88AA0081A961 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = C992DA9A25EE88AA0081A961 /* Colours.swift */; };
 		C9B7EB4D22DF785B0000096C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7EB4C22DF785B0000096C /* Item.swift */; };
 		C9B7EB4F22DF786A0000096C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7EB4E22DF786A0000096C /* Category.swift */; };
 		C9BCFA6224A4FF7300DF6606 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFA6124A4FF7300DF6606 /* Extensions.swift */; };
 		C9BCFA6424A500E000DF6606 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFA6324A500E000DF6606 /* CategoryViewController.swift */; };
-		C9BCFA6624A5023900DF6606 /* Pods_Doista.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BCFA6524A5023900DF6606 /* Pods_Doista.framework */; };
-		C9BCFA6724A5023900DF6606 /* Pods_Doista.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9BCFA6524A5023900DF6606 /* Pods_Doista.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +27,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C9BCFA6724A5023900DF6606 /* Pods_Doista.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,11 +44,11 @@
 		C97ED358226E529400D06978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C97ED35B226E529400D06978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C97ED35D226E529400D06978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C992DA9A25EE88AA0081A961 /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		C9B7EB4C22DF785B0000096C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C9B7EB4E22DF786A0000096C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C9BCFA6124A4FF7300DF6606 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9BCFA6324A500E000DF6606 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		C9BCFA6524A5023900DF6606 /* Pods_Doista.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Doista.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9BCFA6624A5023900DF6606 /* Pods_Doista.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				C97ED351226E529200D06978 /* AppDelegate.swift */,
-				C9BCFA6124A4FF7300DF6606 /* Extensions.swift */,
+				C992DA9925EE88990081A961 /* Common */,
 				C907F662228E1A53005E01A3 /* Controllers */,
 				C907F661228E1A37005E01A3 /* Data Model */,
 				C907F663228E1A66005E01A3 /* Views */,
@@ -142,10 +139,18 @@
 			path = Doista;
 			sourceTree = "<group>";
 		};
+		C992DA9925EE88990081A961 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C9BCFA6124A4FF7300DF6606 /* Extensions.swift */,
+				C992DA9A25EE88AA0081A961 /* Colours.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		EEDA34F0C7D74C7F509D3EDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C9BCFA6524A5023900DF6606 /* Pods_Doista.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				C9001A8322E7293D00F5B586 /* SwipeTableViewController.swift in Sources */,
 				C9B7EB4F22DF786A0000096C /* Category.swift in Sources */,
 				C9BCFA6224A4FF7300DF6606 /* Extensions.swift in Sources */,
+				C992DA9B25EE88AA0081A961 /* Colours.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

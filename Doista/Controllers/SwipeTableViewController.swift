@@ -32,13 +32,11 @@ class SwipeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath)
     -> [UITableViewRowAction]? {
         
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete",
-                                          handler: handleRowAction)
-        delete.backgroundColor = UIColor(red: 241/255, green: 94/255, blue: 14/255, alpha: 1.0)
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete", handler: handleRowAction)
+        delete.backgroundColor = UIColor.deleteButton
         
-        let edit = UITableViewRowAction(style: .normal, title: "Edit",
-                                        handler: handleRowAction)
-        edit.backgroundColor = UIColor(red: 120/255, green: 0/255, blue: 255/255, alpha: 1.0)
+        let edit = UITableViewRowAction(style: .normal, title: "Edit", handler: handleRowAction)
+        edit.backgroundColor = UIColor.editButton
         
         return [delete, edit]
     }

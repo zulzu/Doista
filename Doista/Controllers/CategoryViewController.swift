@@ -20,7 +20,7 @@ class CategoryViewController: SwipeTableViewController {
         super.viewDidLoad()
         
         loadCategories()
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121")!]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.textMainColour]
     }
     
     //MARK: - TableView Datasource Methods
@@ -69,8 +69,8 @@ class CategoryViewController: SwipeTableViewController {
             
             let newCategory = Category()
             newCategory.name = textField.text!
-            newCategory.color = UIColor.random.toHex()!
-            newCategory.order = Category.incrementalIDCat()
+            newCategory.color = UIColor.randomRGBA.rgbaColoursToHex()!
+            newCategory.categoryID = Category.incrementalIDCat()
             
             self.save(category: newCategory)
         }

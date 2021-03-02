@@ -32,9 +32,9 @@ class TodoListViewController: SwipeTableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121")!]
-        navigationController?.navigationBar.barTintColor = UIColor(hex: "#ffffff")
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(hex: "#212121") as Any]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.textMainColour]
+        navigationController?.navigationBar.barTintColor = UIColor.background01
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.textMainColour as Any]
     }
     
     //MARK: - Nav Bar Setup Methods
@@ -71,7 +71,7 @@ class TodoListViewController: SwipeTableViewController {
             
             cell.textLabel?.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)
             
-            if item.done == false {
+            if item.isCompleted == false {
                 cell.textLabel?.attributedText =  nil
                 cell.textLabel?.text =  item.title
             } else {
@@ -91,10 +91,10 @@ class TodoListViewController: SwipeTableViewController {
         if let item = todoItems?[indexPath.row] {
             do {
                 try realm?.write {
-                    item.done = !item.done
+                    item.isCompleted = !item.isCompleted
                 }
             } catch {
-                print("Error saving done status, \(error)")
+                print("Error saving completed status, \(error)")
             }
         }
         
@@ -113,7 +113,7 @@ class TodoListViewController: SwipeTableViewController {
                 do {
                     try self.realm?.write {
                         let newItem = Item()
-                        newItem.order = Item.incrementalIDItem()
+                        newItem.itemID = Item.incrementalIDItem()
                         newItem.title = textField.text!
                         newItem.dateCreated = Date()
                         currentCategory.items.append(newItem)

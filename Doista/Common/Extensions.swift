@@ -57,11 +57,11 @@ extension UIColor {
     
     // MARK: - Computed Properties
     var toHex: String? {
-        return toHex()
+        return rgbaColoursToHex()
     }
     
     // MARK: - From UIColor to String
-    func toHex(alpha: Bool = false) -> String? {
+    func rgbaColoursToHex(alpha: Bool = false) -> String? {
         guard let components = cgColor.components, components.count >= 3 else {
             return nil
         }
@@ -83,13 +83,9 @@ extension UIColor {
     }
 }
 
-//Creating random UIColor values
-//    usage:
-//    let myColor: UIColor = .random
-
 extension UIColor {
-    
-    static var random: UIColor {
+
+    static var randomRGBA: UIColor {
         return UIColor(red: .random(in: 0...0.5),
                        green: .random(in: 0...0.5),
                        blue: .random(in: 0...0.5),
@@ -99,35 +95,35 @@ extension UIColor {
 
 //Mixing the two extensions:
 //
-//let myColor: UIColor = .random
-//let myColorHex = myColor.toHex()
+//let myColor: UIColor = .randomRGBA
+//let myColorHex = myColor.rgbaColoursToHex()
 //print(myColorHex!)
 //let myColorFromHex = UIColor(hex: myColorHex!)
 
-extension UIColor {
-    
-    var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
-        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        
-        return (red, green, blue, alpha)
-    }
-}
+//extension UIColor {
+//
+//    var rgbaColour: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+//        var red: CGFloat = 0
+//        var green: CGFloat = 0
+//        var blue: CGFloat = 0
+//        var alpha: CGFloat = 0
+//        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+//
+//        return (red, green, blue, alpha)
+//    }
+//}
 
-extension String {
-    
-    func slice(from: String, to: String) -> String? {
-        
-        return (range(of: from)?.upperBound).flatMap { substringFrom in
-            (range(of: to, range: substringFrom..<endIndex)?.lowerBound).map { substringTo in
-                String(self[substringFrom..<substringTo])
-            }
-        }
-    }
-}
+//extension String {
+//
+//    func slice(from: String, to: String) -> String? {
+//
+//        return (range(of: from)?.upperBound).flatMap { substringFrom in
+//            (range(of: to, range: substringFrom..<endIndex)?.lowerBound).map { substringTo in
+//                String(self[substringFrom..<substringTo])
+//            }
+//        }
+//    }
+//}
 
 extension String {
     
