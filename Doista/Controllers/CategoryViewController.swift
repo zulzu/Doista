@@ -64,8 +64,8 @@ class CategoryViewController: SwipeTableViewController {
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
-        let alert = UIAlertController(title: "Add a new category", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Add", style: .default) { (action) in
+        let alert = UIAlertController(title: String.getString(.addCategory), message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: String.getString(.add), style: .default) { (action) in
             
             let newCategory = Category()
             newCategory.name = textField.text!
@@ -76,10 +76,10 @@ class CategoryViewController: SwipeTableViewController {
         }
         
         alert.addAction(action)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: String.getString(.cancel), style: .cancel, handler: nil))
         alert.addTextField { (field) in
             textField = field
-            textField.placeholder = "Category name"
+            textField.placeholder = String.getString(.categoryName)
         }
         
         alert.preferredAction = action
@@ -127,8 +127,8 @@ class CategoryViewController: SwipeTableViewController {
         
         var textField = UITextField()
         let updatedCategory = self.categories?[indexPath.row]
-        let alert = UIAlertController(title: "Edit category", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Update", style: .default) { (action) in
+        let alert = UIAlertController(title: String.getString(.editCategory), message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: String.getString(.update), style: .default) { (action) in
             
             if self.categories?[indexPath.row] != nil {
                 do {
@@ -145,12 +145,12 @@ class CategoryViewController: SwipeTableViewController {
         }
         
         alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "New name"
+            alertTextField.placeholder = String.getString(.newName)
             textField = alertTextField
         }
         
         alert.addAction(action)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: String.getString(.cancel), style: .cancel, handler: nil))
         alert.preferredAction = action
         present(alert, animated: true, completion: nil)
     }

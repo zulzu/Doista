@@ -28,16 +28,15 @@ class SwipeTableViewController: UITableViewController {
     }
     
     //Adding the delete and edit functionality to swipe
-    //Need to update the code later for the UIContextualAction
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath)
     -> [UITableViewRowAction]? {
         
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete", handler: handleRowAction)
+        let delete = UITableViewRowAction(style: .destructive, title: String.getString(.delete), handler: handleRowAction)
         delete.backgroundColor = UIColor.deleteButton
         
-        let edit = UITableViewRowAction(style: .normal, title: "Edit", handler: handleRowAction)
+        let edit = UITableViewRowAction(style: .normal, title: String.getString(.edit), handler: handleRowAction)
         edit.backgroundColor = UIColor.editButton
-        
+
         return [delete, edit]
     }
     
@@ -46,14 +45,12 @@ class SwipeTableViewController: UITableViewController {
         let actionItem = action.title
         switch actionItem {
         
-        case "Edit":
-            self.editModel(at: indexPath)
-            
-        case "Delete":
+        case String.getString(.delete):
             self.updateModel(at: indexPath)
-            
+        case String.getString(.edit):
+            self.editModel(at: indexPath)
         default:
-            print("Default just in case")
+            print("Table view action title mismatch")
         }
     }
     

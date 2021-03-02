@@ -39,7 +39,7 @@ class TodoListViewController: SwipeTableViewController {
     
     //MARK: - Nav Bar Setup Methods
     func updateNavBar(withHexCode colourHexCode: String){
-        guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")}
+        guard let navBar = navigationController?.navigationBar else { fatalError(String.getString(.errorMsg))}
         
         let navBarColour = UIColor(hex: selectedCategory!.color)
         navBar.tintColor = navBarColour?.withAlphaComponent(0.7)
@@ -79,7 +79,7 @@ class TodoListViewController: SwipeTableViewController {
             }
             
         } else {
-            cell.textLabel?.text = "No items added"
+            cell.textLabel?.text = String.getString(.noItems)
         }
         
         return cell
@@ -106,8 +106,8 @@ class TodoListViewController: SwipeTableViewController {
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
-        let alert = UIAlertController(title: "Add a new item", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Add", style: .default) { (action) in
+        let alert = UIAlertController(title: String.getString(.addItem), message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: String.getString(.add), style: .default) { (action) in
             
             if let currentCategory = self.selectedCategory {
                 do {
@@ -126,12 +126,12 @@ class TodoListViewController: SwipeTableViewController {
         }
         
         alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "Item name"
+            alertTextField.placeholder = String.getString(.itemName)
             textField = alertTextField
         }
         
         alert.addAction(action)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: String.getString(.cancel), style: .cancel, handler: nil))
         alert.preferredAction = action
         present(alert, animated: true, completion: nil)
     }
@@ -162,8 +162,8 @@ class TodoListViewController: SwipeTableViewController {
         
         var textField = UITextField()
         let updatedItem = self.todoItems?[indexPath.row]
-        let alert = UIAlertController(title: "Edit item", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Update", style: .default) { (action) in
+        let alert = UIAlertController(title: String.getString(.editItem), message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: String.getString(.update), style: .default) { (action) in
             
             if self.selectedCategory?.items != nil {
                 do {
@@ -180,12 +180,12 @@ class TodoListViewController: SwipeTableViewController {
         }
         
         alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "New name"
+            alertTextField.placeholder = String.getString(.newName)
             textField = alertTextField
         }
         
         alert.addAction(action)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: String.getString(.cancel), style: .cancel, handler: nil))
         alert.preferredAction = action
         present(alert, animated: true, completion: nil)
     }
