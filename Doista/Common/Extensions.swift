@@ -133,3 +133,14 @@ extension String {
         return attributeString
     }
 }
+
+extension UIViewController {
+    
+    func createAlert(alert: UIAlertController, action: UIAlertAction) {
+        
+        alert.addAction(action)
+        alert.addAction(UIAlertAction(title: String.getString(.cancel), style: .cancel, handler: nil))
+        alert.preferredAction = action
+        present(alert, animated: true, completion: nil)
+    }
+}

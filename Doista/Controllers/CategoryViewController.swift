@@ -75,15 +75,12 @@ class CategoryViewController: SwipeTableViewController {
             self.save(category: newCategory)
         }
         
-        alert.addAction(action)
-        alert.addAction(UIAlertAction(title: String.getString(.cancel), style: .cancel, handler: nil))
         alert.addTextField { (field) in
             textField = field
             textField.placeholder = String.getString(.categoryName)
         }
         
-        alert.preferredAction = action
-        present(alert, animated: true, completion: nil)
+        createAlert(alert: alert, action: action)
     }
     
     //MARK: Data Manipulation Methods
@@ -149,9 +146,6 @@ class CategoryViewController: SwipeTableViewController {
             textField = alertTextField
         }
         
-        alert.addAction(action)
-        alert.addAction(UIAlertAction(title: String.getString(.cancel), style: .cancel, handler: nil))
-        alert.preferredAction = action
-        present(alert, animated: true, completion: nil)
+        createAlert(alert: alert, action: action)
     }
 }

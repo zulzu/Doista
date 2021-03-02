@@ -130,10 +130,7 @@ class TodoListViewController: SwipeTableViewController {
             textField = alertTextField
         }
         
-        alert.addAction(action)
-        alert.addAction(UIAlertAction(title: String.getString(.cancel), style: .cancel, handler: nil))
-        alert.preferredAction = action
-        present(alert, animated: true, completion: nil)
+        createAlert(alert: alert, action: action)
     }
     
     //MARK - Model Manipulation Methods
@@ -184,9 +181,6 @@ class TodoListViewController: SwipeTableViewController {
             textField = alertTextField
         }
         
-        alert.addAction(action)
-        alert.addAction(UIAlertAction(title: String.getString(.cancel), style: .cancel, handler: nil))
-        alert.preferredAction = action
-        present(alert, animated: true, completion: nil)
+        createAlert(alert: alert, action: action)
     }
 }
