@@ -15,6 +15,7 @@
 		C97ED35C226E529400D06978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C97ED35A226E529400D06978 /* LaunchScreen.storyboard */; };
 		C992DA9B25EE88AA0081A961 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = C992DA9A25EE88AA0081A961 /* Colours.swift */; };
 		C992DAA325EE99B20081A961 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C992DAA225EE99B20081A961 /* Strings.swift */; };
+		C992DAA725EEBA9B0081A961 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C992DAA625EEBA9B0081A961 /* Constants.swift */; };
 		C9B7EB4D22DF785B0000096C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7EB4C22DF785B0000096C /* Item.swift */; };
 		C9B7EB4F22DF786A0000096C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7EB4E22DF786A0000096C /* Category.swift */; };
 		C9BCFA6224A4FF7300DF6606 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFA6124A4FF7300DF6606 /* Extensions.swift */; };
@@ -47,6 +48,7 @@
 		C97ED35D226E529400D06978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C992DA9A25EE88AA0081A961 /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		C992DAA225EE99B20081A961 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		C992DAA625EEBA9B0081A961 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C9B7EB4C22DF785B0000096C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C9B7EB4E22DF786A0000096C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C9BCFA6124A4FF7300DF6606 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				C9BCFA6124A4FF7300DF6606 /* Extensions.swift */,
 				C992DA9A25EE88AA0081A961 /* Colours.swift */,
 				C992DAA225EE99B20081A961 /* Strings.swift */,
+				C992DAA625EEBA9B0081A961 /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				C97ED354226E529200D06978 /* TodoListViewController.swift in Sources */,
 				C97ED352226E529200D06978 /* AppDelegate.swift in Sources */,
 				C9BCFA6424A500E000DF6606 /* CategoryViewController.swift in Sources */,
+				C992DAA725EEBA9B0081A961 /* Constants.swift in Sources */,
 				C9001A8322E7293D00F5B586 /* SwipeTableViewController.swift in Sources */,
 				C9B7EB4F22DF786A0000096C /* Category.swift in Sources */,
 				C9BCFA6224A4FF7300DF6606 /* Extensions.swift in Sources */,
@@ -432,7 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 7U8H9SK8NB;
 				INFOPLIST_FILE = "$(SRCROOT)/Doista/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
@@ -440,7 +444,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8;
+				MARKETING_VERSION = 0.81;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrasPal.Doista;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -454,7 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 7U8H9SK8NB;
 				INFOPLIST_FILE = "$(SRCROOT)/Doista/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
@@ -462,7 +466,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8;
+				MARKETING_VERSION = 0.81;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrasPal.Doista;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

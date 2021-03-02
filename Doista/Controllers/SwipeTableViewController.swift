@@ -14,7 +14,7 @@ class SwipeTableViewController: UITableViewController {
         
         super.viewDidLoad()
         
-        tableView.rowHeight = 65.0
+        tableView.rowHeight = kUI.Size.rowHeight
         tableView.separatorStyle = .none
         
         //        self.tableView.isScrollEnabled = tableView.contentSize.height < tableView.frame.height
