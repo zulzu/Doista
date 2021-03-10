@@ -20,7 +20,18 @@
 		C9B7EB4F22DF786A0000096C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7EB4E22DF786A0000096C /* Category.swift */; };
 		C9BCFA6224A4FF7300DF6606 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFA6124A4FF7300DF6606 /* Extensions.swift */; };
 		C9BCFA6424A500E000DF6606 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCFA6324A500E000DF6606 /* CategoryViewController.swift */; };
+		C9D9BE5025F6816E001C275C /* DoistaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9BE4F25F6816E001C275C /* DoistaUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9D9BE5225F6816E001C275C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C97ED346226E529200D06978 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C97ED34D226E529200D06978;
+			remoteInfo = Doista;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C9BCFA6824A5023A00DF6606 /* Embed Frameworks */ = {
@@ -53,10 +64,20 @@
 		C9B7EB4E22DF786A0000096C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C9BCFA6124A4FF7300DF6606 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9BCFA6324A500E000DF6606 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		C9D9BE4D25F6816E001C275C /* DoistaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoistaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D9BE4F25F6816E001C275C /* DoistaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoistaUITests.swift; sourceTree = "<group>"; };
+		C9D9BE5125F6816E001C275C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C97ED34B226E529200D06978 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D9BE4A25F6816E001C275C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				C97ED350226E529200D06978 /* Doista */,
+				C9D9BE4E25F6816E001C275C /* DoistaUITests */,
 				C97ED34F226E529200D06978 /* Products */,
 				4A65EF4FEBD61CAE08C2F16C /* Pods */,
 				EEDA34F0C7D74C7F509D3EDA /* Frameworks */,
@@ -125,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				C97ED34E226E529200D06978 /* Doista.app */,
+				C9D9BE4D25F6816E001C275C /* DoistaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,6 +175,15 @@
 				C992DAA625EEBA9B0081A961 /* Constants.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		C9D9BE4E25F6816E001C275C /* DoistaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C9D9BE4F25F6816E001C275C /* DoistaUITests.swift */,
+				C9D9BE5125F6816E001C275C /* Info.plist */,
+			);
+			path = DoistaUITests;
 			sourceTree = "<group>";
 		};
 		EEDA34F0C7D74C7F509D3EDA /* Frameworks */ = {
@@ -184,18 +216,40 @@
 			productReference = C97ED34E226E529200D06978 /* Doista.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C9D9BE4C25F6816E001C275C /* DoistaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9D9BE5625F6816E001C275C /* Build configuration list for PBXNativeTarget "DoistaUITests" */;
+			buildPhases = (
+				C9D9BE4925F6816E001C275C /* Sources */,
+				C9D9BE4A25F6816E001C275C /* Frameworks */,
+				C9D9BE4B25F6816E001C275C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9D9BE5325F6816E001C275C /* PBXTargetDependency */,
+			);
+			name = DoistaUITests;
+			productName = DoistaUITests;
+			productReference = C9D9BE4D25F6816E001C275C /* DoistaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		C97ED346226E529200D06978 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Andras Pal";
 				TargetAttributes = {
 					C97ED34D226E529200D06978 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					C9D9BE4C25F6816E001C275C = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = C97ED34D226E529200D06978;
 					};
 				};
 			};
@@ -213,6 +267,7 @@
 			projectRoot = "";
 			targets = (
 				C97ED34D226E529200D06978 /* Doista */,
+				C9D9BE4C25F6816E001C275C /* DoistaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -225,6 +280,13 @@
 				C97ED35C226E529400D06978 /* LaunchScreen.storyboard in Resources */,
 				C97ED359226E529400D06978 /* Assets.xcassets in Resources */,
 				C97ED357226E529200D06978 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D9BE4B25F6816E001C275C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +352,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9D9BE4925F6816E001C275C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9D9BE5025F6816E001C275C /* DoistaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9D9BE5325F6816E001C275C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C97ED34D226E529200D06978 /* Doista */;
+			targetProxy = C9D9BE5225F6816E001C275C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C97ED355226E529200D06978 /* Main.storyboard */ = {
@@ -474,6 +552,46 @@
 			};
 			name = Release;
 		};
+		C9D9BE5425F6816E001C275C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7U8H9SK8NB;
+				INFOPLIST_FILE = DoistaUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrasPal.DoistaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Doista;
+			};
+			name = Debug;
+		};
+		C9D9BE5525F6816E001C275C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7U8H9SK8NB;
+				INFOPLIST_FILE = DoistaUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrasPal.DoistaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Doista;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -491,6 +609,15 @@
 			buildConfigurations = (
 				C97ED361226E529400D06978 /* Debug */,
 				C97ED362226E529400D06978 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9D9BE5625F6816E001C275C /* Build configuration list for PBXNativeTarget "DoistaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9D9BE5425F6816E001C275C /* Debug */,
+				C9D9BE5525F6816E001C275C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
